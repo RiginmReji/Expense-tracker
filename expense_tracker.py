@@ -2,26 +2,26 @@
 
 import os
 
-# File where expenses will be saved
+
 FILE_NAME = "expenses.txt"
 
-# Function to add a new expense
+
 def add_expense():
     print("Add a new expense")
     description = input("Enter the description of the expense: ")
     amount = float(input("Enter the amount: "))
     category = input("Enter the category of the expense (e.g., Food, Transport): ")
 
-    # Create a formatted expense record
+
     expense_record = f"Description: {description}, Amount: ${amount:.2f}, Category: {category}\n"
 
-    # Write the expense to the file
+  
     with open(FILE_NAME, "a") as file:
         file.write(expense_record)
 
     print("Expense added successfully!\n")
 
-# Function to view all expenses
+
 def view_expenses():
     if os.path.exists(FILE_NAME):
         print("Current Expenses:")
@@ -37,7 +37,6 @@ def view_expenses():
 
     print()
 
-# Function to write expenses to the file (This would typically be used for saving or exporting)
 def write_expenses_to_file():
     if os.path.exists(FILE_NAME):
         with open(FILE_NAME, "r") as file:
@@ -51,7 +50,6 @@ def write_expenses_to_file():
     else:
         print("No expense records found to write.")
 
-# Function to display the menu
 def display_menu():
     print("Expense Tracker Menu:")
     print("1. Add Expense")
